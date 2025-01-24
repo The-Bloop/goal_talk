@@ -1,0 +1,10 @@
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/uninstall.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/goal_talk_uninstall.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/goal_talk_node.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/test.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/edit_cache.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/rebuild_cache.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/list_install_components.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/install.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/install/local.dir
+/home/the_bloop/nav2_ws/src/goal_talk/build/CMakeFiles/install/strip.dir
