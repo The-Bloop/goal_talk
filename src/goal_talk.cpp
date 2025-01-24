@@ -28,7 +28,7 @@ void GTNode::talk()
     send_goal_options.feedback_callback = std::bind(&GTNode::nav_to_pose_feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
 
     auto goal_msg = NavigateToPose::Goal();
-    goal_msg.pose.header.frame_id = "base_footprint";
+    goal_msg.pose.header.frame_id = "map";
     goal_msg.pose.pose.position.x = 0.75;
     goal_msg.pose.pose.position.y = 0.75;
 
