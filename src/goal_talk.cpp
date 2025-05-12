@@ -12,7 +12,7 @@ GTNode::GTNode(const std::string &nodeName) : rclcpp::Node(nodeName)
 void GTNode::setup()
 {
     //action_client_ptr = rclcpp_action::create_client<NavigateToPose>(this, "/navigate_to_pose");
-    const auto timer_period = 1000ms;
+    const auto timer_period = 100ms;
     timer_ = this->create_wall_timer(timer_period, std::bind(&GTNode::talk, this));
 
     rclcpp::spin(shared_from_this());
@@ -28,8 +28,8 @@ void GTNode::talk()
     send_goal_options.feedback_callback = std::bind(&GTNode::nav_to_pose_feedback_callback, this, std::placeholders::_1, std::placeholders::_2);
 
     auto goal_msg = NavigateToPose::Goal();
-    goal_msg.pose.header.frame_id = "base_footprint";
-    goal_msg.pose.pose.position.x = 0.75;
+    goal_msg.pose.header.frame_id = "map";
+    goal_msg.pose.pose.position.x = -0.5;
     goal_msg.pose.pose.position.y = 0.75;
 
     tf2::Quaternion q;
@@ -73,10 +73,11 @@ void GTNode::nav_to_pose_feedback_callback(const GoalHandleNav::SharedPtr, const
 {
     std::stringstream ss;
     ss << "Next number in sequence received: ";
-    /*for (auto number : feedback->partial_sequence) {
-      ss << number << " ";
-    }*/
-    RCLCPP_INFO(this->get_logger(), "Next number in sequence received: ");
+    std::cout<<feedback->estimated_time_remaining.sec<<std::endl;
+    // for (auto number : std::begin::begin(feedback->distance_remaining)) {
+    //   ss << number << " ";
+    // }
+    // RCLCPP_INFO(this->get_logger(), "Next number in sequence received: ");
 }
 
 int main(int argc, char **argv)
